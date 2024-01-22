@@ -13,6 +13,11 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CharFreqService {
 
+    /**
+     * Evaluate frequency of each character in the provided string
+     * @param line provided string
+     * @return map of characters to frequencies
+     */
     public Map<Character, Integer> evaluate(String line) {
 
         var map = line
