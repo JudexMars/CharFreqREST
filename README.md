@@ -25,6 +25,11 @@
 ```
 ## Запуск
 ### Maven
+```shell
+./mvnw springboot:run
+```
+Либо
+
 Linux/MacOS:
 ```shell
 ./mvnw package
