@@ -19,12 +19,12 @@ public class AppExceptionHandler {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
+    protected ProblemDetail handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
         List<String> body =
                 ex.getBindingResult().getAllErrors().stream()
                         .map(DefaultMessageSourceResolvable::getDefaultMessage)
                         .filter(Objects::nonNull)
                         .toList();
-        return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+        return ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, body.toString());
     }
 }
