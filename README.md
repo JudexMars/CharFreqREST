@@ -35,7 +35,7 @@ Linux/MacOS:
 ```
 Затем:
 ```shell
-java -jar target/*.jar
+java -jar target/CharFreqREST-0.0.1-SNAPSHOT.jar
 ```
 ### Docker
 ```shell
